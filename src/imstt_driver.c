@@ -441,6 +441,9 @@ static Bool IMSTTPreInit(ScrnInfoPtr pScrn, int flags)
 	xf86SetOperatingState(resVgaIo, pEnt->index, ResUnusedOpr);
 	xf86SetOperatingState(resVgaMem, pEnt->index, ResDisableOpr);
 
+	pScrn->memPhysBase = iptr->PciInfo->memBase[0];
+	pScrn->fbOffset = 0;
+
 	if (pEnt->device->chipset && *pEnt->device->chipset) {
 		pScrn->chipset = pEnt->device->chipset;
 		iptr->Chipset = xf86StringToToken(IMSTTChipsets, pScrn->chipset);
