@@ -9,7 +9,7 @@
 
 static __inline__ void regw(unsigned long base_addr, unsigned long regindex, unsigned long regdata)
 {
-	__asm__ __volatile__ ("stwbrx %1,%2,%3; eieio"
+	asm volatile ("stwbrx %1,%2,%3; eieio"
 		      : "=m" (*(volatile unsigned *)(base_addr+regindex))
 		      : "r" (regdata), "b" (regindex), "r" (base_addr));
 }
@@ -19,7 +19,7 @@ static __inline__ unsigned long regr(unsigned long base_addr, unsigned long regi
 {
 	register unsigned long val;
 
-	__asm__ __volatile__ ("lwbrx %0,%1,%2; eieio"
+	asm volatile ("lwbrx %0,%1,%2; eieio"
 		      : "=r" (val)
 		      : "b" (regindex), "r" (base_addr),
 		      "m" (*(volatile unsigned *)(base_addr+regindex)));

@@ -1,4 +1,4 @@
-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/imstt/imstt_driver.c,v 1.20 2002/09/24 15:23:55 tsi Exp $ */
+/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/imstt/imstt_driver.c,v 1.21 2003/08/23 15:03:02 dawes Exp $ */
 
 /*
  *	Copyright 2000	Ani Joshi <ajoshi@unixbox.com>
@@ -192,7 +192,7 @@ static XF86ModuleVersionInfo IMSTTVersRec = {
 	MODULEVENDORSTRING,
 	MODINFOSTRING1,
 	MODINFOSTRING2,
-	XORG_VERSION_CURRENT,
+	XF86_VERSION_CURRENT,
 	VERSION_MAJOR, VERSION_MINOR, PATCHLEVEL,
 	ABI_CLASS_VIDEODRV,
 	ABI_VIDEODRV_VERSION,
@@ -440,9 +440,6 @@ static Bool IMSTTPreInit(ScrnInfoPtr pScrn, int flags)
 	xf86RegisterResources(pEnt->index, NULL, ResNone);
 	xf86SetOperatingState(resVgaIo, pEnt->index, ResUnusedOpr);
 	xf86SetOperatingState(resVgaMem, pEnt->index, ResDisableOpr);
-
-	pScrn->memPhysBase = iptr->PciInfo->memBase[0];
-	pScrn->fbOffset = 0;
 
 	if (pEnt->device->chipset && *pEnt->device->chipset) {
 		pScrn->chipset = pEnt->device->chipset;
