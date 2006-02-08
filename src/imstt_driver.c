@@ -506,11 +506,6 @@ static Bool IMSTTPreInit(ScrnInfoPtr pScrn, int flags)
 			   pScrn->videoRam / 1024);
 	}
 
-	/* XXX this is sorta a guess, got some info from the TVP3030 manual */
-	pScrn->numClocks = 2;
-	pScrn->clock[0] = 110000;
-	pScrn->clock[1] = 220000;
-
 	clockRanges = xnfcalloc(sizeof(ClockRange), 1);
 	clockRanges->next = NULL;
 	clockRanges->minClock = 20000;
