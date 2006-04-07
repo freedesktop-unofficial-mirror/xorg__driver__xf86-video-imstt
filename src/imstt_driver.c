@@ -34,9 +34,9 @@
 #include "config.h"
 #endif
 
+#include <string.h>
 #include "xf86.h"
 #include "xf86_OSproc.h"
-#include "xf86_ansic.h"
 #include "xf86PciInfo.h"
 #include "xf86Pci.h"
 #include "xf86Version.h"
@@ -99,9 +99,9 @@ static void IMSTTSetClock(ScrnInfoPtr pScrn, unsigned long mhz);
 static void IMSTTWriteMode(ScrnInfoPtr pScrn);
 
 #define DRIVER_NAME	"imstt"
-#define DRIVER_VERSION	"1.0.0"
+#define DRIVER_VERSION	"1.1.0"
 #define VERSION_MAJOR	1
-#define VERSION_MINOR	0
+#define VERSION_MINOR	1
 #define PATCHLEVEL	0
 #define IMSTT_VERSION	((VERSION_MAJOR << 24) | \
 			 (VERSION_MINOR << 16) | \
