@@ -99,10 +99,10 @@ static void IMSTTSetClock(ScrnInfoPtr pScrn, unsigned long mhz);
 static void IMSTTWriteMode(ScrnInfoPtr pScrn);
 
 #define DRIVER_NAME	"imstt"
-#define DRIVER_VERSION	"1.1.0"
-#define VERSION_MAJOR	1
-#define VERSION_MINOR	1
-#define PATCHLEVEL	0
+#define DRIVER_VERSION	PACKAGE_VERSION
+#define VERSION_MAJOR	PACKAGE_VERSION_MAJOR
+#define VERSION_MINOR	PACKAGE_VERSION_MINOR
+#define PATCHLEVEL	PACKAGE_VERSION_PATCHLEVEL
 #define IMSTT_VERSION	((VERSION_MAJOR << 24) | \
 			 (VERSION_MINOR << 16) | \
 			 PATCHLEVEL)
